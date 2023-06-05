@@ -1,6 +1,6 @@
 package com.eaf.auth.service;
 
-import com.eaf.auth.entity.UserCredential;
+import com.eaf.auth.entity.UserInfo;
 import com.eaf.auth.repository.UserCredentialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,7 +17,7 @@ public class AuthService {
     @Autowired
     private JwtService jwtService;
 
-    public String saveUser(UserCredential credential) {
+    public String saveUser(UserInfo credential) {
         credential.setPassword(passwordEncoder.encode(credential.getPassword()));
         repository.save(credential);
         return "user added to the system";

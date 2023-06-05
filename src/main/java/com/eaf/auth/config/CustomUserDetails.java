@@ -1,6 +1,6 @@
 package com.eaf.auth.config;
 
-import com.eaf.auth.entity.UserCredential;
+import com.eaf.auth.entity.UserInfo;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,9 +11,9 @@ public class CustomUserDetails implements UserDetails {
     private String username;
     private String password;
 
-    public CustomUserDetails(UserCredential userCredential) {
-        this.username = userCredential.getName();
-        this.password = userCredential.getPassword();
+    public CustomUserDetails(UserInfo userInfo) {
+        this.username = userInfo.getName();
+        this.password = userInfo.getPassword();
     }
 
     @Override

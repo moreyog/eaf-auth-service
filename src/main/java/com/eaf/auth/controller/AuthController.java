@@ -1,7 +1,7 @@
 package com.eaf.auth.controller;
 
 import com.eaf.auth.dto.AuthRequest;
-import com.eaf.auth.entity.UserCredential;
+import com.eaf.auth.entity.UserInfo;
 import com.eaf.auth.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,7 +19,7 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     @PostMapping("/register")
-    public String addNewUser(@RequestBody UserCredential user) {
+    public String addNewUser(@RequestBody UserInfo user) {
         return service.saveUser(user);
     }
 
