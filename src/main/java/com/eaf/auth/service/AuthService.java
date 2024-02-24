@@ -1,7 +1,9 @@
 package com.eaf.auth.service;
 
-import com.eaf.auth.entity.UserInfo;
-import com.eaf.auth.repository.UserCredentialRepository;
+//import com.eaf.auth.entity.UserInfo;
+import com.eaf.security.entity.UserInfo;
+import com.eaf.security.repository.UserInfoRepository;
+import com.eaf.security.service.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     @Autowired
-    private UserCredentialRepository repository;
+    private UserInfoRepository repository;
     @Autowired
     private PasswordEncoder passwordEncoder;
 
